@@ -39,6 +39,21 @@ class ViewController: UIViewController {
         
         
     }
+    @IBAction func restartQuestions(_ sender: Any) {
+        
+        let alertControl = UIAlertController(title: "RESTART?", message: "Would you like to restart?", preferredStyle: .alert)
+        let restart = UIAlertAction(title: "YES", style: .default) { (_) in
+            self.startOver()
+            self.score = 0
+            self.scoreLabel.text = "Score : \(self.score)"
+        }
+        let cancel = UIAlertAction(title: "NO", style: .destructive, handler: nil)
+        
+        alertControl.addAction(restart)
+        alertControl.addAction(cancel)
+        present(alertControl, animated: true, completion: nil)
+        
+    }
     
     @IBAction func answerPressed(_ sender: UIButton) {
         
@@ -70,10 +85,9 @@ class ViewController: UIViewController {
         option2.text = QuestionBank().questions[questionNumber].optionB
         option3.text = QuestionBank().questions[questionNumber].optionC
         option4.text = QuestionBank().questions[questionNumber].optionD
-        
     }
     
-    
+
     
     
     func checkAnswer() {

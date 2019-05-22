@@ -8,7 +8,7 @@
 
 import Foundation
 
-class QuestionBank{
+class QuestionBank {
     
     
     var questions : Array = [Question]()
