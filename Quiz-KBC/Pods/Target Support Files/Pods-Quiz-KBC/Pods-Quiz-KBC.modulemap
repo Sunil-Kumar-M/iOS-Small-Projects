@@ -1,0 +1,6 @@
+framework module Pods_Quiz_KBC {
+  umbrella header "Pods-Quiz-KBC-umbrella.h"
+
+  export *
+  module * { export * }
+}
